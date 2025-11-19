@@ -1,15 +1,28 @@
-export default function Experiencia() {
+// src/components/Experiencia.jsx
+import React from "react";
+
+export default function Experiencia({ trabajos }) {
+  if (!trabajos || trabajos.length === 0) {
+    return (
+      <section>
+        <h3>Experiencia Profesional</h3>
+        <p>No se ha registrado experiencia profesional.</p>
+        <hr />
+      </section>
+    );
+  }
+
   return (
     <section>
       <h3>Experiencia Profesional</h3>
       <ul>
-        <li>
-          <strong>Desarrollador Full Stack</strong> - Navisoft Gaming (2022-2024)
-        </li>
-        <li>
-          <strong>Instructor TIC</strong> - SENA (2020-2022)
-        </li>
+        {trabajos.map(({ id, puesto, empresa, periodo }) => (
+          <li key={id}>
+            <strong>{puesto}</strong> - {empresa} ({periodo})
+          </li>
+        ))}
       </ul>
+      <hr />
     </section>
   );
 }

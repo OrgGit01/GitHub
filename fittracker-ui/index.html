@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitTracker UI — Crear Nuevo Entrenamiento</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <!-- Ejemplo de fuente local: reemplazar por assets/fonts en producción -->
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <nav class="top-nav" aria-label="Navegación principal">
+      <a class="back-link" href="templates/workouts.html">← Back to Workouts</a>
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🏋️</span>
+        <span class="brand-name">FitTracker</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <h1 class="page-title">Create New Workout</h1>
+      <p class="page-subtitle">Design your custom workout plan</p>
+    </section>
+
+    <section class="content-wrap">
+      <article class="form-card" aria-labelledby="form-title">
+        <h2 id="form-title" class="sr-only">Formulario para crear entrenamiento</h2>
+
+        <form class="workout-form" action="#" method="post">
+          <!-- Información general -->
+          <section class="form-section" aria-labelledby="general-info-title">
+            <h3 id="general-info-title" class="section-title">General</h3>
+            <div class="grid-2">
+              <div class="form-field">
+                <label for="workout-name">Workout Name</label>
+                <input
+                  type="text"
+                  id="workout-name"
+                  name="workout-name"
+                  placeholder="e.g., Upper Body Strength"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="workout-type">Workout Type</label>
+                <select id="workout-type" name="workout-type" required>
+                  <option value="" selected disabled>Select type</option>
+                  <option value="strength">Strength</option>
+                  <option value="hypertrophy">Hypertrophy</option>
+                  <option value="endurance">Endurance</option>
+                  <option value="mobility">Mobility</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="workout-description">Description (Optional)</label>
+              <textarea
+                id="workout-description"
+                name="workout-description"
+                rows="4"
+                placeholder="Brief description of your workout..."
+              ></textarea>
+            </div>
+          </section>
+
+          <!-- Ejercicios -->
+          <section class="form-section" aria-labelledby="exercises-title">
+            <div class="section-header">
+              <h3 id="exercises-title" class="section-title">Exercises</h3>
+              <button type="button" class="btn btn-outline" aria-disabled="true">+ Add Exercise</button>
+            </div>
+
+            <article class="exercise-card" aria-labelledby="exercise-1-title">
+              <header class="exercise-header">
+                <h4 id="exercise-1-title">Exercise 1</h4>
+              </header>
+
+              <div class="grid-2">
+                <div class="form-field">
+                  <label for="exercise-name-1">Exercise Name</label>
+                  <input
+                    type="text"
+                    id="exercise-name-1"
+                    name="exercise-name-1"
+                    placeholder="e.g., Bench Press"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="muscle-group-1">Muscle Group</label>
+                  <select id="muscle-group-1" name="muscle-group-1">
+                    <option value="" selected disabled>Select muscle group</option>
+                    <option value="chest">Chest</option>
+                    <option value="back">Back</option>
+                    <option value="shoulders">Shoulders</option>
+                    <option value="arms">Arms</option>
+                    <option value="legs">Legs</option>
+                    <option value="core">Core</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Sets -->
+              <div class="sets-wrap">
+                <div class="set-row" role="group" aria-label="Set 1">
+                  <div class="set-label">Set 1</div>
+
+                  <div class="set-grid">
+                    <div class="form-field">
+                      <label for="reps-1">Reps</label>
+                      <input type="number" id="reps-1" name="reps-1" min="1" placeholder="10" />
+                    </div>
+
+                    <div class="form-field">
+                      <label for="weight-1">Weight</label>
+                      <input type="number" id="weight-1" name="weight-1" min="0" step="0.5" placeholder="20" />
+                    </div>
+
+                    <div class="form-field">
+                      <label for="unit-1">Unit</label>
+                      <select id="unit-1" name="unit-1">
+                        <option value="kg" selected>kg</option>
+                        <option value="lb">lb</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="set-actions">
+                  <button type="button" class="btn btn-outline" aria-disabled="true">+ Add Set</button>
+                </div>
+              </div>
+
+              <div class="form-field form-field--sm">
+                <label for="rest-1">Rest Time (seconds)</label>
+                <input type="number" id="rest-1" name="rest-1" min="0" placeholder="60" value="60" />
+              </div>
+            </article>
+          </section>
+
+          <!-- Acciones -->
+          <section class="form-actions" aria-label="Acciones del formulario">
+            <button type="button" class="btn btn-secondary">Save as Draft</button>
+            <button type="submit" class="btn btn-primary">Create Workout</button>
+          </section>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <section class="footer-content">
+      <p class="meta">© 2025 FitTracker UI — Maquetación HTML/CSS</p>
+    </section>
+  </footer>
+</body>
+</html>
